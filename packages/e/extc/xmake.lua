@@ -5,6 +5,7 @@ package("extc")
     add_versions("1.5", "7084070e2d4c47dfc49ae9260b1e462628ad913f")
 
     on_install(function (package)
+	package:add("includedirs", "include/")
         local configs = {}
         if package:config("shared") then
             configs.kind = "shared"
