@@ -14,7 +14,9 @@ package("extc")
         if package:config("shared") then
             configs.kind = "shared"
         end
-        import("package.tools.xmake").install(package)
+        import("package.tools.xmake").install(package, config)
+        package::add_includedirs("include")
+        --os.cp("include", package:installdir("include"))
     end)
 
     on_test(function (package)
