@@ -2,7 +2,7 @@ package("extc")
     set_description("The extc package")
 
     set_urls("https://github.com/Apsapeh/extc.git")
-    --add_versions("1.0", "<shasum256 or gitcommit>")
+    add_versions("1.0", "7084070e2d4c47dfc49ae9260b1e462628ad913f")
 
     on_install(function (package)
         local configs = {}
