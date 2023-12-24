@@ -20,5 +20,5 @@ package("extc")
 
     on_test(function (package)
         -- TODO check includes and interfaces
-        assert(package:has_cfuncs("init_vec", {includes = "extc_vec.h"}))
+        assert(package:has_cfuncs("vec_init", {includes = "extc_vec.h"}))
     end)
