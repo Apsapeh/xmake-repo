@@ -15,8 +15,7 @@ package("extc")
             configs.kind = "shared"
         end
         import("package.tools.xmake").install(package, config)
-        package::add_includedirs("include")
-        --os.cp("include", package:installdir("include"))
+        os.cp("include/*", package:installdir("include"))
     end)
 
     on_test(function (package)
