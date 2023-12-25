@@ -11,6 +11,7 @@ package("extc")
 
     on_install(function (package)
         local configs = {}
+        configs.not_build_examples = true;
         if package:config("shared") then
             configs.kind = "shared"
         end
