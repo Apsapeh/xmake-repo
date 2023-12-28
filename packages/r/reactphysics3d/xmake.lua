@@ -24,7 +24,7 @@ package("reactphysics3d")
                 end
         ]])
         local configs = {kind="static"}
-        if package:option()("shared") then
+        if package:("shared") then
             configs.kind = "shared"
         end
         -- if package:config("fast_math") ~= nil then
