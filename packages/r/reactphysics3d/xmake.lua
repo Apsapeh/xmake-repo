@@ -8,6 +8,7 @@ package("reactphysics3d")
     	io.writefile("include/reactphysics3d/configuration.h", "#include <cstdint>\n" .. data)
     	io.writefile("xmake.lua", [[
             option("fast_math")
+            option("opt_level")
             option_end()
             add_rules("mode.debug", "mode.release")
             target("reactphysics3d")
@@ -25,9 +26,10 @@ package("reactphysics3d")
         if package:config("shared") then
             configs.kind = "shared"
         end
-        if package:config("fast_math") then 
-            configs.fast_math = "fast_math"
+        if package:config("fast_math") ~= nil then
+            configs.fast_math = true
         end
+        print("\n\n\nCONFIG: " .. package:config("aboba") .. ".\n\n\n")
         if package:config("opt_level") ~= nil then 
             configs["opt_level"] = package:config("opt_level")
         else 
