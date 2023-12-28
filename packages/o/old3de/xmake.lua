@@ -2,7 +2,7 @@ package("old3de")
     set_description("The old3de package")
     add_deps("reactphysics3d")
 
-    add_urls("https://github.com/Apsapeh/xmake-repo")
+    add_urls("https://github.com/Apsapeh/Old3DEngine.git")
     --add_versions("1.0", "<shasum256 or gitcommit>")
 
     on_install(function (package)

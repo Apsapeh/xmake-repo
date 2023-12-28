@@ -1,7 +1,7 @@
 package("reactphysics3d")
     set_description("The reactphysics3d package")
 
-    add_urls("https://github.com/Apsapeh/xmake-repo")
+    add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
     --add_versions("1.0", "<shasum256 or gitcommit>")
 
     on_install(function (package)
@@ -9,6 +9,9 @@ package("reactphysics3d")
         if package:config("shared") then
             configs.kind = "shared"
         end
+        set_languages("cxx11")
+    	add_includedirs("include")
+    	add_files("src/**.cpp")
         import("package.tools.xmake").install(package, configs)
     end)
 
