@@ -14,12 +14,12 @@ package("reactphysics3d")
                 add_includedirs("include")
                 set_languages("cxx11")
                 set_symbols("hidden")
-                set_optimize("$(opt_level)")
+                set_optimize(get_config("opt_level"))
                 if has_config("fast_math") then
                     set_fpmodels("fast")
                 end
         ]])
-        local configs = {kind="static", opt_level="fastest"}
+        local configs = {kind="static"}
         if package:config("shared") then
             configs.kind = "shared"
         end
@@ -27,7 +27,9 @@ package("reactphysics3d")
             configs.fast_math = "fast_math"
         end
         if package:config("opt_level") ~= nil then 
-            configs.opt_level = package:config("opt_level")
+            configs["opt_level"] = package:config("opt_level")
+        else 
+            configs["opt_level"] = "fastest"
         end
         os.cp("include/*", package:installdir("include"))
         import("package.tools.xmake").install(package, configs)
