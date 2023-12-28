@@ -2,20 +2,24 @@ package("reactphysics3d")
     set_description("The reactphysics3d package")
 
     add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
-    --add_versions("1.0", "<shasum256 or gitcommit>")
-	
-    add_files("src/**.cpp")
 
     on_install(function (package)
-        local configs = {}
+    	io.writefile("xmake.lua", [[
+            add_rules("mode.debug", "mode.release")
+            target("reactphysics3d")
+                set_kind("$(kind)")
+                add_files("src/**.cpp")
+                add_includedirs("include")
+                set_languages("cxx11")
+                set_symbols("hidden")
+	        set_fpmodels("fast")
+        	set_optimize("aggressive")
+        ]])
+        local configs = {kind="static"}
         if package:config("shared") then
             configs.kind = "shared"
         end
-        --set_languages("cxx11")
-    	--add_includedirs("include")
-    	--add_files("src/**.cpp")
-    	--package:add("add_files", "src/**.cpp")
-        --import("package.tools.xmake").install(package, configs)
+        import("package.tools.xmake").install(package, configs)
     end)
 
     on_test(function (package)
