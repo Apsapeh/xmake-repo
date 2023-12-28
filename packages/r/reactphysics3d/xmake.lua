@@ -24,3 +24,4 @@ package("reactphysics3d")
         os.cp("include/*", package:installdir("include"))
         import("package.tools.xmake").install(package, configs)
     end)
+    
