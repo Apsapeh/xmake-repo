@@ -4,6 +4,8 @@ package("reactphysics3d")
     add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
 
     on_install(function (package)
+    	local data = io.readfile("include/reactphysics3d/configuration.h")
+    	io.writefile("include/reactphysics3d/configuration.h", "#include <cstdint>\n" + data)
     	io.writefile("xmake.lua", [[
             add_rules("mode.debug", "mode.release")
             target("reactphysics3d")
