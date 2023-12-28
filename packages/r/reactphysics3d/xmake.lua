@@ -3,6 +3,8 @@ package("reactphysics3d")
 
     add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
     --add_versions("1.0", "<shasum256 or gitcommit>")
+	
+    add_files("src/**.cpp")
 
     on_install(function (package)
         local configs = {}
@@ -12,8 +14,8 @@ package("reactphysics3d")
         --set_languages("cxx11")
     	--add_includedirs("include")
     	--add_files("src/**.cpp")
-    	package:add("add_files", "src/**.cpp")
-        import("package.tools.xmake").install(package, configs)
+    	--package:add("add_files", "src/**.cpp")
+        --import("package.tools.xmake").install(package, configs)
     end)
 
     on_test(function (package)
