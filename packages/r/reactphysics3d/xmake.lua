@@ -7,6 +7,8 @@ package("reactphysics3d")
     	local data = io.readfile("include/reactphysics3d/configuration.h")
     	io.writefile("include/reactphysics3d/configuration.h", "#include <cstdint>\n" .. data)
     	io.writefile("xmake.lua", [[
+            option("fast_math")
+            option_end()
             add_rules("mode.debug", "mode.release")
             target("reactphysics3d")
                 set_kind("$(kind)")
