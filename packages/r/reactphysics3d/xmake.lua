@@ -2,7 +2,7 @@ package("reactphysics3d")
     set_description("The reactphysics3d package")
 
     add_urls("https://github.com/Apsapeh/xmake-repo")
-    add_versions("1.0", "<shasum256 or gitcommit>")
+    --add_versions("1.0", "<shasum256 or gitcommit>")
 
     on_install(function (package)
         local configs = {}
