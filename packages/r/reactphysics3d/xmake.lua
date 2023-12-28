@@ -7,9 +7,6 @@ package("reactphysics3d")
     	local data = io.readfile("include/reactphysics3d/configuration.h")
     	io.writefile("include/reactphysics3d/configuration.h", "#include <cstdint>\n" .. data)
     	io.writefile("xmake.lua", [[
-            --option("fast_math")
-            --option("opt_level")
-            --option_end()
             add_rules("mode.debug", "mode.release")
             target("reactphysics3d")
                 set_kind("$(kind)")
@@ -17,30 +14,13 @@ package("reactphysics3d")
                 add_includedirs("include")
                 set_languages("cxx11")
                 set_symbols("hidden")
-                set_optimize(get_config("opt_level"))
-                print("\n\n\nCONFIG: " .. get_config("fast_math") .. ".\n\n\n")
-                if has_config("fast_math") then
-                    set_fpmodels("fast")
+                set_optimize("aggressive")
                 end
         ]])
         local configs = {kind="static"}
-        if package:("shared") then
+        if package:config("shared") then
             configs.kind = "shared"
         end
-        -- if package:config("fast_math") ~= nil then
-        --     configs.fast_math = true
-        -- end
-        -- --print("\n\n\nCONFIG: " .. package:config("aboba") .. ".\n\n\n")
-        -- if package:config("opt_level") ~= nil then 
-        --     configs["opt_level"] = package:config("opt_level")
-        -- else 
-        --     configs["opt_level"] = "fastest"
-        -- end
         os.cp("include/*", package:installdir("include"))
         import("package.tools.xmake").install(package, configs)
-    end)
-
-    on_test(function (package)
-        -- TODO check includes and interfaces
-        -- assert(package:has_cfuncs("foo", {includes = "foo.h"})
     end)
