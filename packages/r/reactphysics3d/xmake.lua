@@ -15,7 +15,6 @@ package("reactphysics3d")
                 set_languages("cxx11")
                 set_symbols("hidden")
                 set_optimize("aggressive")
-                end
         ]])
         local configs = {kind="static"}
         if package:config("shared") then
@@ -24,4 +23,3 @@ package("reactphysics3d")
         os.cp("include/*", package:installdir("include"))
         import("package.tools.xmake").install(package, configs)
     end)
-    
