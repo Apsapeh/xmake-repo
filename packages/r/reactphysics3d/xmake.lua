@@ -26,7 +26,7 @@ package("reactphysics3d")
         if package:config("fast_math") then 
             configs.fast_math = "fast_math"
         end
-        if package:config("opt_level") != nil then 
+        if package:config("opt_level") ~= nil then 
             configs.opt_level = package:config("opt_level")
         end
         os.cp("include/*", package:installdir("include"))
