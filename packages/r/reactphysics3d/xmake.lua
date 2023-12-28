@@ -10,8 +10,9 @@ package("reactphysics3d")
             configs.kind = "shared"
         end
         --set_languages("cxx11")
-    	add_includedirs("include")
-    	add_files("src/**.cpp")
+    	--add_includedirs("include")
+    	--add_files("src/**.cpp")
+    	package:add("add_files", "src/**.cpp")
         import("package.tools.xmake").install(package, configs)
     end)
 
