@@ -14,12 +14,17 @@ package("reactphysics3d")
                 add_includedirs("include")
                 set_languages("cxx11")
                 set_symbols("hidden")
-	        set_fpmodels("fast")
-        	set_optimize("aggressive")
+                set_optimize("aggressive")
+                if has_config("fast_math") then
+                    set_fpmodels("fast")
+                end
         ]])
         local configs = {kind="static"}
         if package:config("shared") then
             configs.kind = "shared"
+        end
+        if package:config("fast_math") then 
+            configs.fast_math = "fast_math"
         end
         os.cp("include/*", package:installdir("include"))
         import("package.tools.xmake").install(package, configs)
