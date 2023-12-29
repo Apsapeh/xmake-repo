@@ -3,7 +3,8 @@ package("old3de")
     add_deps("reactphysics3d")
     add_deps("glfw")
 
-    add_urls("https://github.com/Apsapeh/Old3DEngine.git")
+    set_urls("https://github.com/Apsapeh/Old3DEngine.git")
+    add_versions("last", "887f94a6db4741edf43010ea919d2da4cd72437a")
 
     on_install(function (package)
         local configs = {}
