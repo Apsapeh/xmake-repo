@@ -4,7 +4,7 @@ package("old3de")
     add_deps("glfw")
 
     set_urls("https://github.com/Apsapeh/Old3DEngine.git")
-    add_versions("last", "887f94a6db4741edf43010ea919d2da4cd72437a")
+    add_versions("last", "3b07d62bd04acf12f0245b517311159e676c49be")
 
     on_install(function (package)
         local configs = {}
