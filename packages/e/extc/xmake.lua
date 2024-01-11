@@ -2,7 +2,7 @@ package("extc")
     set_description("The extc package")
 
     set_urls("https://github.com/Apsapeh/extc.git")
-    add_versions("last", "f9d16e95c3a1de53760c0dedae21221f67cf9bfd")
+    add_versions("last", "7fbb7bceadb20c9cb16aa2dc723dc38441fcb60f")
     --add_versions("1.5", "7084070e2d4c47dfc49ae9260b1e462628ad913f")
 
     on_load(function (package)
