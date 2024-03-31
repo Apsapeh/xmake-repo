@@ -2,7 +2,7 @@ package("reactphysics3d")
     set_description("The reactphysics3d package")
 
     add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
-    add_versions("0.9.0", "2591dae5f2dadd42f32227bc805dabc0a6fc8642")
+    add_versions("0.9.0", "4bbbaa7c6e92942734eec696e23a2fad1f1cb8a1")
 
     on_install(function (package)
     	local data = io.readfile("include/reactphysics3d/configuration.h")
