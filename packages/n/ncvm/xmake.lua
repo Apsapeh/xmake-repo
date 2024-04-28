@@ -1,7 +1,7 @@
 package("ncvm")
     set_description("Virtual Machine")
 
-    set_urls("https://github.com/Apsapeh/extc.git")
+    set_urls("https://github.com/Apsapeh/ncvm.git")
     add_versions("last", "e911abbc95abf413ec0b2a5959adf741649888bb")
     --add_versions("1.5", "7084070e2d4c47dfc49ae9260b1e462628ad913f")
 
