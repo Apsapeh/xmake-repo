@@ -6,6 +6,7 @@ package("hateengine")
     add_deps("tinygltf 2.8.13")
     add_deps("glu")
     add_deps("termcolor 5635ae00856eeddffcbf7091d13e2987abde91a2")
+    add_deps("soloud")
     add_defines("GLM_ENABLE_EXPERIMENTAL")
 
     set_urls("https://github.com/Apsapeh/HateEngine.git")
