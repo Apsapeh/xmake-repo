@@ -1,0 +1,69 @@
+diff --git a/include/reactphysics3d/configuration.h b/include/reactphysics3d/configuration.h
+index 6f2de958..6281c93c 100644
+--- a/include/reactphysics3d/configuration.h
++++ b/include/reactphysics3d/configuration.h
+@@ -27,6 +27,7 @@
+ #define	REACTPHYSICS3D_CONFIGURATION_H
+ 
+ // Libraries
++#include <cstdint>
+ #include <limits>
+ #include <cfloat>
+ #include <utility>
+diff --git a/include/reactphysics3d/containers/Map.h b/include/reactphysics3d/containers/Map.h
+index aadf9fa6..2fcbc91a 100755
+--- a/include/reactphysics3d/containers/Map.h
++++ b/include/reactphysics3d/containers/Map.h
+@@ -383,7 +383,7 @@ class Map {
+                         }
+                         else {
+                             assert(false);
+-                            throw std::runtime_error("The key and value pair already exists in the map");
++                            // throw std::runtime_error("The key and value pair already exists in the map");
+                         }
+                     }
+                 }
+@@ -569,7 +569,7 @@ class Map {
+ 
+             if (entry == INVALID_INDEX) {
+                 assert(false);
+-                throw std::runtime_error("No item with given key has been found in the map");
++                // throw std::runtime_error("No item with given key has been found in the map");
+             }
+ 
+             return mEntries[entry].second;
+@@ -582,7 +582,7 @@ class Map {
+ 
+             if (entry == INVALID_INDEX) {
+                 assert(false);
+-                throw std::runtime_error("No item with given key has been found in the map");
++                // throw std::runtime_error("No item with given key has been found in the map");
+             }
+ 
+             return mEntries[entry].second;
+diff --git a/include/reactphysics3d/utils/DefaultLogger.h b/include/reactphysics3d/utils/DefaultLogger.h
+index f4d2e927..cc6aba42 100644
+--- a/include/reactphysics3d/utils/DefaultLogger.h
++++ b/include/reactphysics3d/utils/DefaultLogger.h
+@@ -361,7 +361,7 @@ class DefaultLogger : public Logger {
+                     mFileStream(filePath, std::ios::binary) {
+ 
+                     if(!mFileStream.is_open()) {
+-                        throw(std::runtime_error("ReactPhysics3D Logger: Unable to open an output stream to file " + mFilePath));
++                        //throw(std::runtime_error("ReactPhysics3D Logger: Unable to open an output stream to file " + mFilePath));
+                     }
+ 
+                     // Write the header
+diff --git a/include/reactphysics3d/utils/Profiler.h b/include/reactphysics3d/utils/Profiler.h
+index b65a19d6..043dda15 100644
+--- a/include/reactphysics3d/utils/Profiler.h
++++ b/include/reactphysics3d/utils/Profiler.h
+@@ -230,7 +230,7 @@ class Profiler {
+                     mFileStream(filePath, std::ios::binary) {
+ 
+                     if(!mFileStream.is_open()) {
+-                        throw(std::runtime_error("ReactPhysics3D Logger: Unable to open an output stream to file " + mFilePath));
++                        // throw(std::runtime_error("ReactPhysics3D Logger: Unable to open an output stream to file " + mFilePath));
+                     }
+                 }
+ 
