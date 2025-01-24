@@ -14,13 +14,15 @@ package("hateengine")
     add_defines("GLM_ENABLE_EXPERIMENTAL")
 
     set_urls("https://github.com/Apsapeh/HateEngine.git")
-    add_versions("last", "73a7cfe3e02dc58cb386de2fef956a0b50c3b026")
+    --add_versions("1.0.0", "73a7cfe3e02dc58cb386de2fef956a0b50c3b026")
+
+    
 
     on_install(function (package)
-        local configs = {}
-        if package:config("shared") then
-            configs.kind = "shared"
-        end
+        local configs = {__package_mode = true}
+        --if package:config("shared") then
+        --    configs.kind = "shared"
+        --end
         os.cp("include/*", package:installdir("include"))
         import("package.tools.xmake").install(package, configs)
     end)
