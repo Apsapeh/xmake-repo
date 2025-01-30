@@ -4,7 +4,8 @@ package("reactphysics3d")
     add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
     add_versions("0.9.0", "4bbbaa7c6e92942734eec696e23a2fad1f1cb8a1")
     add_patches("0.9.0", "patches/no_exceptions.patch", "80ada60e0c5c4fb61c15857055357f330790c9ad4c32edca8ef28d186c186048")
-
+    add_patches("0.9.0", "patches/trigger_assert_fix.patch", "240c70e9bcbc064a40b50775cca25742272ad582b94285c49557568f229d898f")
+    
     on_install(function (package)
     	--local data = io.readfile("include/reactphysics3d/configuration.h")
     	--io.writefile("include/reactphysics3d/configuration.h", "#include <cstdint>\n" .. data)
