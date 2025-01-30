@@ -16,8 +16,15 @@ package("reactphysics3d")
                 add_files("src/**.cpp")
                 add_includedirs("include")
                 set_languages("cxx11")
-                set_symbols("hidden")
-                set_optimize("aggressive")
+
+                if is_mode("debug") then
+                    set_symbols("debug")
+                    set_optimize("none")
+                elseif is_mode("release") then
+                    set_strip("all")
+                    set_fpmodels("fast")
+                    set_optimize("aggressive")
+                end
         ]])
         local configs = {kind="static"}
         if package:config("shared") then
