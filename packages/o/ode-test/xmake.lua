@@ -1,4 +1,4 @@
-package("ode")
+package("ode-test")
 
     set_homepage("http://ode.org/")
     set_description("ODE is an open source, high performance library for simulating rigid body dynamics.")
