@@ -8,6 +8,7 @@ package("ode-test")
     add_versions("0.16.2", "000a5cdd0a81811cade2b0409ec06911a95e3c4c0d72a4cce3af6131115d0350")
 
     add_configs("libccd", {description = "Build with libccd.", default = false, type = "boolean"})
+    apply_patch("patches/windows_header.patch", "a1c4b5ca279e113fc1d96f8361f600480662d6d2c61cc0badcc40b9c3a880bdb")
 
     add_deps("cmake")
     if is_plat("windows") then
