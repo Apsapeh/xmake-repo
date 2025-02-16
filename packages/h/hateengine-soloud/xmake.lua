@@ -11,7 +11,7 @@ package("hateengine-soloud")
     add_patches("2020.02.07", path.join(os.scriptdir(), "patches", "miniaudio_v11.patch"), "d98b6727a159c3dccd45de872b321a1c180bc353af08d4bdce4e298f4de14f21")
 
     if is_plat("linux") then
-        add_syslinks("pthread", "dl", "atomic")
+        add_syslinks("pthread", "dl")
     end
 
     on_install(function (package)
@@ -22,7 +22,7 @@ package("hateengine-soloud")
         io.writefile("xmake.lua", [[
             add_rules("mode.debug", "mode.release")
 
-            add_requires("miniaudio")
+            add_requires("hateengine-miniaudio")
 
             target("soloud")
                 set_kind("$(kind)")
@@ -32,7 +32,7 @@ package("hateengine-soloud")
 
                 -- for now we'll only support the miniaudio backend
                 add_defines("WITH_MINIAUDIO")
-                add_packages("miniaudio")
+                add_packages("hateengine-miniaudi")
 
                 add_files("src/**.cpp|tools/**.cpp|backend/**.cpp|backend/**.mm")
                 add_files("src/**.c|tools/**.c|backend/**.c")
