@@ -3,12 +3,11 @@ package("reactphysics3d")
 
     add_urls("https://github.com/DanielChappuis/reactphysics3d.git")
     add_versions("0.9.0", "4bbbaa7c6e92942734eec696e23a2fad1f1cb8a1")
-    add_versions("0.10.0", "c2201c50ea57ec4ed6c8e718981f0df56dfa9450")
-    add_versions("0.10.1", "58079242a58d55ecbfddd1d93f1ae5fbe0874c20")
     add_versions("0.10.2", "cd958bbc0c6e84a869388cba6613f10cc645b3cb")
 
     add_patches("0.9.0", "patches/no_exceptions.patch", "80ada60e0c5c4fb61c15857055357f330790c9ad4c32edca8ef28d186c186048")
     add_patches("0.9.0", "patches/trigger_assert_fix.patch", "240c70e9bcbc064a40b50775cca25742272ad582b94285c49557568f229d898f")
+    add_patches("0.10.2", "patches/v0.10.2-undefined.patch", "2e438c629898dff740e00343df6172da50a25c5f67a869958657d47e171f1379")
     
     on_install(function (package)
         io.writefile("xmake.lua", [[
