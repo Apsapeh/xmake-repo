@@ -32,7 +32,7 @@ package("hateengine-soloud")
 
                 -- for now we'll only support the miniaudio backend
                 add_defines("WITH_MINIAUDIO")
-                add_packages("hateengine-miniaudi")
+                add_packages("hateengine-miniaudio")
 
                 add_files("src/**.cpp|tools/**.cpp|backend/**.cpp|backend/**.mm")
                 add_files("src/**.c|tools/**.c|backend/**.c")
