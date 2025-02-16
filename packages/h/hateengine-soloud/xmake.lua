@@ -11,7 +11,7 @@ package("hateengine-soloud")
     add_patches("2020.02.07", path.join(os.scriptdir(), "patches", "miniaudio_v11.patch"), "d98b6727a159c3dccd45de872b321a1c180bc353af08d4bdce4e298f4de14f21")
 
     if is_plat("linux") then
-        add_syslinks("pthread", "dl")
+        add_syslinks("pthread", "dl", "atomic")
     end
 
     on_install(function (package)
