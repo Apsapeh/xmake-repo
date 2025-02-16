@@ -38,7 +38,7 @@ package("hateengine-miniaudio")
     end
 
     if is_plat("linux", "bsd") then
-        add_syslinks("pthread", "dl")
+        add_syslinks("pthread", "dl", "atomic")
     end
 
     on_load(function (package)
